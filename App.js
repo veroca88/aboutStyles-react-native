@@ -4,10 +4,12 @@ import Styles from "./app/screens/aboutStyles";
 import Flex from "./app/screens/aboutFlexbox";
 import Shadows from "./app/screens/aboutShadows";
 import PaddingMargin from "./app/screens/aboutPaddingMargin";
+import AboutText from "./app/screens/aboutText";
 
 export default function App() {
   // return <Styles />;
   // return <Flex />;
   // return <Shadows />;
-  return <PaddingMargin />;
+  // return <PaddingMargin />;
+  return <AboutText />;
 }
