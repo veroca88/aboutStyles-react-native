@@ -8,8 +8,11 @@ import AboutText from "./app/screens/aboutText";
 import AppText from "./app/screens/aboutEncapsulatingText";
 import Icons from "./app/screens/aboutIcons";
 import Platform from "./app/screens/aboutPlatform";
-import Ios from "./app/screens/aboutPlatformByBehavior.ios";
-import Android from "./app/screens/aboutPlatformByBehavior.android";
+
+// We dont need to import those (Ios & Android) below because React native automatically import
+// the right implementation of the specific platform import we only need to import <AppText/>
+// import Ios from "./app/screens/aboutPlatformByBehavior.ios";
+// import Android from "./app/screens/aboutPlatformByBehavior.android";
 
 export default function App() {
   // return <Styles />;
@@ -26,10 +29,8 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      {/* <AppText>I love love love React Native!</AppText> */}
+      <AppText>I love love love React Native!</AppText>
       {/* <Platform>Very important this form to write code! K.I.S.</Platform> */}
-      {/* <Ios>Example of using IOS Platform Behavior</Ios>  */}
-      <Android>Example of using Android platform Behavior</Android>
     </View>
   );
 
