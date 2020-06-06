@@ -13,6 +13,7 @@ function aboutPlatform({ children }) {
 //   },
 // });
 
+// Good example to Keep It Simple K.I.S.
 const styles = StyleSheet.create({
   text: {
     // color of both platforms
