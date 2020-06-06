@@ -7,6 +7,7 @@ import PaddingMargin from "./app/screens/aboutPaddingMargin";
 import AboutText from "./app/screens/aboutText";
 import AppText from "./app/screens/aboutEncapsulatingText";
 import Icons from "./app/screens/aboutIcons";
+import Platform from "./app/screens/aboutPlatform";
 
 export default function App() {
   // return <Styles />;
@@ -15,16 +16,18 @@ export default function App() {
   // return <PaddingMargin />;
   // return <AboutText />;
 
-  // return (
-  //   <View
-  //     style={{
-  //       flex: 1,
-  //       justifyContent: "center",
-  //       alignItems: "center",
-  //     }}
-  //   >
-  //     <AppText>I love love love React Native!</AppText>
-  //   </View>
-  // );
-  return <Icons />;
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {/* <AppText>I love love love React Native!</AppText> */}
+      <Platform>Very important this form to write code! K.I.S.</Platform>
+    </View>
+  );
+
+  // return <Icons />;
 }
