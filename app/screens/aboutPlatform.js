@@ -5,7 +5,7 @@ function aboutPlatform({ children }) {
   return <Text style={styles.text}>{children}</Text>;
 }
 
-// Example of wrong way to write code
+// Example of wrong way to write StyleSheet code
 // const styles = StyleSheet.create({
 //   text: {
 //     fontSize: Platform.OS === "android" ? 18 : 20,
