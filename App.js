@@ -10,6 +10,7 @@ import Icons from "./app/screens/aboutIcons";
 import Platform from "./app/screens/aboutPlatform";
 import OrganizeStyles from "./app/screens/OrganizeStyles-AppText/aboutOrganizeStyles";
 import TextInput from "./app/screens/aboutTextInput";
+import Switch from "./app/screens/aboutSwitch";
 
 // We dont need to import those (Ios & Android) below because React native automatically import
 // the right implementation of the specific platform import we only need to import <AppText/>
@@ -50,9 +51,5 @@ export default function App() {
   //     <OrganizeStyles>Organize Styles!</OrganizeStyles>
   //   </View>
   // );
-  return (
-    <View>
-      <TextInput />
-    </View>
-  );
+  return <Switch />;
 }
