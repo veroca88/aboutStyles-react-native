@@ -9,6 +9,7 @@ import AppText from "./app/screens/aboutEncapsulatingText";
 import Icons from "./app/screens/aboutIcons";
 import Platform from "./app/screens/aboutPlatform";
 import OrganizeStyles from "./app/screens/OrganizeStyles-AppText/aboutOrganizeStyles";
+import TextInput from "./app/screens/aboutTextInput";
 
 // We dont need to import those (Ios & Android) below because React native automatically import
 // the right implementation of the specific platform import we only need to import <AppText/>
@@ -38,15 +39,20 @@ export default function App() {
   // return <Icons />;
 
   //ORGANIZESTYLES-APPTEXT FOLDER
+  // return (
+  //   <View
+  //     style={{
+  //       flex: 1,
+  //       justifyContent: "center",
+  //       alignItems: "center",
+  //     }}
+  //   >
+  //     <OrganizeStyles>Organize Styles!</OrganizeStyles>
+  //   </View>
+  // );
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <OrganizeStyles>Organize Styles!</OrganizeStyles>
+    <View>
+      <TextInput />
     </View>
   );
 }
