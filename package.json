@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "expo": "~37.0.3",
+    "formik": "^2.1.4",
     "logkitty": "^0.7.1",
     "mem": "^4.0.0",
     "react": "~16.9.0",
