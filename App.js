@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Screen, StyleSheet, Text, View } from "react-native";
 import Styles from "./app/screens/aboutStyles";
 import Flex from "./app/screens/aboutFlexbox";
 import Shadows from "./app/screens/aboutShadows";
@@ -13,6 +13,7 @@ import TextInput from "./app/screens/aboutTextInput";
 import Switch from "./app/screens/aboutSwitch";
 import Forms from "./app/screens/aboutForms";
 import FormikForms from "./app/screens/aboutFormikForms";
+import AskPermissionUser from "./app/screens/aboutAskPermissionUser";
 
 // We dont need to import those (Ios & Android) below because React native automatically import
 // the right implementation of the specific platform import we only need to import <AppText/>
@@ -53,5 +54,5 @@ export default function App() {
   //     <OrganizeStyles>Organize Styles!</OrganizeStyles>
   //   </View>
   // );
-  return <FormikForms />;
+  return <AskPermissionUser />;
 }
