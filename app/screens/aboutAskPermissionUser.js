@@ -3,6 +3,7 @@ import { StyleSheet, Button, Image } from "react-native";
 import Screen from "./Screen";
 import * as ImagePicker from "expo-image-picker";
 import * as Permission from "expo-permissions";
+import AboutImageInput from "./aboutImageInput";
 
 function aboutAskPermissionUser(props) {
   const [imageUri, setImageUri] = useState();
@@ -35,6 +36,7 @@ function aboutAskPermissionUser(props) {
       {/* Accessing the library */}
       <Button title="Select Image" onPress={selectImage}></Button>
       <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
+      <AboutImageInput imageUri={imageUri} />
     </Screen>
   );
 }
