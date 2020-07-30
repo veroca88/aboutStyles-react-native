@@ -34,9 +34,12 @@ function aboutAskPermissionUser(props) {
   return (
     <Screen>
       {/* Accessing the library */}
-      <Button title="Select Image" onPress={selectImage}></Button>
-      <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
-      <AboutImageInput imageUri={imageUri} />
+      {/* <Button title="Select Image" onPress={selectImage}></Button>
+      <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} /> */}
+      <AboutImageInput
+        imageUri={imageUri}
+        onChangeImage={(uri) => setImageUri(uri)}
+      />
     </Screen>
   );
 }
