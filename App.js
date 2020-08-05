@@ -1,58 +1,95 @@
-import React from "react";
-import { Screen, StyleSheet, Text, View } from "react-native";
-import Styles from "./app/screens/aboutStyles";
-import Flex from "./app/screens/aboutFlexbox";
-import Shadows from "./app/screens/aboutShadows";
-import PaddingMargin from "./app/screens/aboutPaddingMargin";
-import AboutText from "./app/screens/aboutText";
-import AppText from "./app/screens/aboutEncapsulatingText";
-import Icons from "./app/screens/aboutIcons";
-import Platform from "./app/screens/aboutPlatform";
-import OrganizeStyles from "./app/screens/OrganizeStyles-AppText/aboutOrganizeStyles";
-import TextInput from "./app/screens/aboutTextInput";
-import Switch from "./app/screens/aboutSwitch";
-import Forms from "./app/screens/aboutForms";
-import FormikForms from "./app/screens/aboutFormikForms";
-import AskPermissionUser from "./app/screens/aboutAskPermissionUser";
+// import React from "react";
+// import { Screen, StyleSheet, Text, View } from "react-native";
+// import Styles from "./app/screens/aboutStyles";
+// import Flex from "./app/screens/aboutFlexbox";
+// import Shadows from "./app/screens/aboutShadows";
+// import PaddingMargin from "./app/screens/aboutPaddingMargin";
+// import AboutText from "./app/screens/aboutText";
+// import AppText from "./app/screens/aboutEncapsulatingText";
+// import Icons from "./app/screens/aboutIcons";
+// import Platform from "./app/screens/aboutPlatform";
+// import OrganizeStyles from "./app/screens/OrganizeStyles-AppText/aboutOrganizeStyles";
+// import TextInput from "./app/screens/aboutTextInput";
+// import Switch from "./app/screens/aboutSwitch";
+// import Forms from "./app/screens/aboutForms";
+// import FormikForms from "./app/screens/aboutFormikForms";
+// import AskPermissionUser from "./app/screens/aboutAskPermissionUser";
+// import ReactNavigation from "./app/screens/aboutReactNavigation";
 
 // We dont need to import those (Ios & Android) below because React native automatically import
 // the right implementation of the specific platform import we only need to import <AppText/>
 // import Ios from "./app/screens/aboutPlatformByBehavior.ios";
 // import Android from "./app/screens/aboutPlatformByBehavior.android";
 
+// export default function App() {
+// return <Styles />;
+// return <Flex />;
+// return <Shadows />;
+// return <PaddingMargin />;
+// return <AboutText />;
+
+// return (
+//   <View
+//     style={{
+//       flex: 1,
+//       justifyContent: "center",
+//       alignItems: "center",
+//     }}
+//   >
+//     <AppText>I love love love React Native!</AppText>
+//     <Platform>Very important this form to write code! K.I.S.</Platform>
+//   </View>
+// );
+
+// return <Icons />;
+
+//ORGANIZESTYLES-APPTEXT FOLDER
+// return (
+//   <View
+//     style={{
+//       flex: 1,
+//       justifyContent: "center",
+//       alignItems: "center",
+//     }}
+//   >
+//     <OrganizeStyles>Organize Styles!</OrganizeStyles>
+//   </View>
+// );
+// return <ReactNavigation />;
+// }
+
+import React from "react";
+import { Text } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+
+import Screen from "./app/screens/Screen";
+
+const Tweets = () => (
+  <Screen>
+    <Text>Tweets</Text>
+  </Screen>
+);
+
+const TweetDetails = () => (
+  <Screen>
+    <Text>Tweet Details</Text>
+  </Screen>
+);
+
+const Stack = createStackNavigator();
+
+const StackNavigator = () => (
+  <Stack.Navigator initialRouteName="Tweets">
+    <Stack.Screen name="TweetDetails" component={TweetDetails} />
+    <Stack.Screen name="Tweets" component={Tweets} />
+  </Stack.Navigator>
+);
+
 export default function App() {
-  // return <Styles />;
-  // return <Flex />;
-  // return <Shadows />;
-  // return <PaddingMargin />;
-  // return <AboutText />;
-
-  // return (
-  //   <View
-  //     style={{
-  //       flex: 1,
-  //       justifyContent: "center",
-  //       alignItems: "center",
-  //     }}
-  //   >
-  //     <AppText>I love love love React Native!</AppText>
-  //     <Platform>Very important this form to write code! K.I.S.</Platform>
-  //   </View>
-  // );
-
-  // return <Icons />;
-
-  //ORGANIZESTYLES-APPTEXT FOLDER
-  // return (
-  //   <View
-  //     style={{
-  //       flex: 1,
-  //       justifyContent: "center",
-  //       alignItems: "center",
-  //     }}
-  //   >
-  //     <OrganizeStyles>Organize Styles!</OrganizeStyles>
-  //   </View>
-  // );
-  return <AskPermissionUser />;
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
 }
