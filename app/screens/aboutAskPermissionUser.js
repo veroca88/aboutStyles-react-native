@@ -1,3 +1,5 @@
+//This is app.js " "
+
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Button, Image } from "react-native";
 import Screen from "./Screen";
@@ -17,6 +19,7 @@ function aboutAskPermissionUser(props) {
     if (!result.granted)
       alert("You need to enable permission to access the library");
   };
+  //WE MOVE THIS FUNTION requestPermision TO aboutImageInput to do that function reusable
 
   useEffect(() => {
     requestPermission();
