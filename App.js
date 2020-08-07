@@ -147,11 +147,13 @@ const StackNavigator = () => (
     <Stack.Screen
       name="TweetDetails"
       component={TweetDetails}
-      // options={{ title: "This is the title Tweet Details" }}
-      //Title dinamically
-      options={({ route }) => ({
-        title: route.params.id,
-      })}
+      //This props in option ONLY APPLY to TweetDetails screen
+      //if we want globally we should copy and paste inside <Stack.Navigator>
+      options={{
+        headerStyle: { backgroundColor: "tomato" },
+        headerTintColor: "white", //this prop change color of text
+        headerShown: false, // if false header disappear
+      }}
     />
     <Stack.Screen
       name="Tweets"
