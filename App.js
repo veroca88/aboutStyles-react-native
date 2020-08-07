@@ -102,20 +102,15 @@
 //   );
 // }
 
+//npm install @react-navigation/bottom-tabs
+
 import React from "react";
 import { Text, Button } from "react-native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+// import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
 
 import Screen from "./app/screens/Screen";
-
-//  Link is not a scrren is just a component so for access to { navigation } we need to use navigation hook
-const Link = () => {
-  const navigation = useNavigation();
-  return (
-    <Button title="Click" onPress={() => navigation.navigate("TweetDetails")} />
-  );
-};
 
 // PASSING A PARAMETER {id: 1}
 
@@ -140,34 +135,44 @@ const TweetDetails = ({ route }) => (
   </Screen>
 );
 
-const Stack = createStackNavigator();
+// const Stack = createStackNavigator();
 
-const StackNavigator = () => (
-  <Stack.Navigator initialRouteName="Tweets">
-    <Stack.Screen
-      name="TweetDetails"
-      component={TweetDetails}
-      //This props in option ONLY APPLY to TweetDetails screen
-      //if we want globally we should copy and paste inside <Stack.Navigator>
-      options={{
-        headerStyle: { backgroundColor: "tomato" },
-        headerTintColor: "white", //this prop change color of text
-        headerShown: false, // if false header disappear
-      }}
-    />
-    <Stack.Screen
-      name="Tweets"
-      component={Tweets}
-      // This is the title in the main page
-      options={{ title: "Tweet Details one two " }}
-    />
-  </Stack.Navigator>
+// const StackNavigator = () => (
+//   <Stack.Navigator initialRouteName="Tweets">
+//     <Stack.Screen
+//       name="TweetDetails"
+//       component={TweetDetails}
+//       options={{ headerStyle: { backgroundColor: "tomato" } }}
+//     />
+//     <Stack.Screen
+//       name="Tweets"
+//       component={Tweets}
+//       options={{ title: "Tweet Details one two " }}
+//     />
+//   </Stack.Navigator>
+// );
+
+const Account = () => (
+  <Screen>
+    <Text>Account</Text>
+  </Screen>
+);
+
+// USING TAB NAVIGATOR
+
+const Tab = createBottomTabNavigator();
+const TabNavigator = () => (
+  <Tab.Navigator>
+    <Tab.Screen name="Feed" component={Tweets} />
+    <Tab.Screen name="Account" component={Account} />
+  </Tab.Navigator>
 );
 
 export default function App() {
   return (
     <NavigationContainer>
-      <StackNavigator />
+      {/* <StackNavigator /> */}
+      <TabNavigator />
     </NavigationContainer>
   );
 }

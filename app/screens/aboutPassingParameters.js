@@ -39,6 +39,8 @@ const TweetDetails = ({ route }) => (
   </Screen>
 );
 
+// USING STACK
+
 const Stack = createStackNavigator();
 
 //  We should be aware if we created a route and passing params throughth
