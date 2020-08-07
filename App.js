@@ -119,6 +119,8 @@ const Link = () => {
 
 // PASSING A PARAMETER {id: 1}
 
+// This is the main page
+
 const Tweets = ({ navigation }) => (
   <Screen>
     <Text>Tweets</Text>
@@ -142,8 +144,21 @@ const Stack = createStackNavigator();
 
 const StackNavigator = () => (
   <Stack.Navigator initialRouteName="Tweets">
-    <Stack.Screen name="TweetDetails" component={TweetDetails} />
-    <Stack.Screen name="Tweets" component={Tweets} />
+    <Stack.Screen
+      name="TweetDetails"
+      component={TweetDetails}
+      // options={{ title: "This is the title Tweet Details" }}
+      //Title dinamically
+      options={({ route }) => ({
+        title: route.params.id,
+      })}
+    />
+    <Stack.Screen
+      name="Tweets"
+      component={Tweets}
+      // This is the title in the main page
+      options={{ title: "Tweet Details one two " }}
+    />
   </Stack.Navigator>
 );
 

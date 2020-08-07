@@ -41,10 +41,25 @@ const TweetDetails = ({ route }) => (
 
 const Stack = createStackNavigator();
 
+//  We should be aware if we created a route and passing params throughth
+// in this case TweeetDetails in our STACKNAVIGATOR we can do a dinamic
+
 const StackNavigator = () => (
   <Stack.Navigator initialRouteName="Tweets">
-    <Stack.Screen name="TweetDetails" component={TweetDetails} />
-    <Stack.Screen name="Tweets" component={Tweets} />
+    <Stack.Screen
+      name="TweetDetails"
+      component={TweetDetails}
+      // options={{ title: "This is the title Tweet Details" }}
+      //Title dinamically
+      options={({ route }) => ({
+        title: route.params.id,
+      })}
+    />
+    <Stack.Screen
+      name="Tweets"
+      component={Tweets}
+      options={{ title: "Tweet Details " }}
+    />
   </Stack.Navigator>
 );
 
